@@ -1,10 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom'
 import { Home, Watch, Search, NotFound } from './pages';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <React.Fragment>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/search' element={<Search />} />

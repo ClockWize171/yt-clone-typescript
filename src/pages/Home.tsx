@@ -7,7 +7,6 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
     return (
         <>
             Home
-            asdfasdfasdf
         </>
     );
 };
