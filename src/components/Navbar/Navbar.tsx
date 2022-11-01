@@ -5,26 +5,28 @@ import { BsCameraVideo, BsBell } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoAppsSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom';
-import youtube from '../assets/youtube.png'
+import youtube from '../../assets/youtube.png'
 
 
 interface INavbarProps {
+    setToggleSidebar: React.Dispatch<React.SetStateAction<boolean>>,
+    toggleSidebar: boolean
 }
 
-const Navbar: React.FunctionComponent<INavbarProps> = (props) => {
+const Navbar: React.FunctionComponent<INavbarProps> = ({ setToggleSidebar, toggleSidebar }) => {
 
     const [inputFlag, setInputFlag] = React.useState(false)
-    
+
     return (
         <div className="flex justify-between items-center px-14 h-14 bg-[#0f0f0f] opacity-95 sticky top-0 z-50">
             <div className="flex gap-8 items-center text-2xl">
-                <div>
-                    <GiHamburgerMenu />
+                <div className='cursor-pointer'>
+                    <GiHamburgerMenu onClick={() => setToggleSidebar(!toggleSidebar)} />
                 </div>
                 <Link to='/'>
                     <div className="flex gap-1 items-center justify-center">
                         <img src={youtube} className='w-9 h-9 items-center' alt='youtube-icon' />
-                        <span className='text-xl font-medium items-center'>Youtube</span>
+                        <span className='text-xl font-medium items-center'>YouTube</span>
                     </div>
                 </Link>
             </div>
