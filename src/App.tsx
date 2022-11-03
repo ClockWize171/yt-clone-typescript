@@ -12,7 +12,7 @@ function App() {
       <div style={{ height: '7.5vh' }}>
         <Navbar setToggleSidebar={setToggleSidebar} toggleSidebar={toggleSidebar} />
       </div>
-      <div className='flex' style={{ height: '92.5vh' }}>
+      <div className='flex w-full' style={{ height: '100vh' }}>
         <Sidebar toggleSidebar={toggleSidebar} />
         <Routes>
           <Route path='/' element={<Home />} />
